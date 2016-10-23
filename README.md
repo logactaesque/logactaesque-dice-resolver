@@ -7,7 +7,7 @@ The application is a [Sinatra-based](http://www.sinatrarb.com/) ruby application
     bundle install
 
     # run the application on port 9292
-    bundle exec rackup
+    bundle exec unicorn -p 9292 -c ./config/unicorn.rb
 
 The service presently holds a single endpoint called *resolve*, hence:
 
