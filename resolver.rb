@@ -5,8 +5,6 @@ require 'JSON'
 
 class ResolverApp < Sinatra::Base
 
-  set :root, File.dirname(__FILE__)
-
   enable :sessions
 
   get '/resolve' do

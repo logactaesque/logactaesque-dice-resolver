@@ -17,7 +17,7 @@ will return:
 
     {"homeDice":"blue","awayDice":"green"}
 
-Hence for a given match, the _blue_ dice will be used to determine home goals, and _green_ for away.  If a home team and away team name are supplied, it will (for the moment) always return the above JSON with a response code of 200, however in the near future the resolver will have additional logic to allow dice to be selected based upon:
+Hence for a given match, the _blue_ dice will be used to determine home goals, and _green_ for away.  If a home team and away team name are supplied, it will (for the moment) __always__ return the above JSON with a response code of 200, however in the near future the resolver will have additional logic to allow dice to be selected based upon:
 
 - Competition
 - Recent form
@@ -27,3 +27,7 @@ Hence for a given match, the _blue_ dice will be used to determine home goals, a
 If either team is missing in the request, then the response code is 400 and you will see something akin to the following error message:
 
     {"error":"Missing away team"}
+
+Available tests can be run via rspec:
+    
+    rspec --format=documentation
