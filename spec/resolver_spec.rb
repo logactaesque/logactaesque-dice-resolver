@@ -4,14 +4,14 @@ require 'rack/test'
 
 set :environment, :test
 
-describe 'Dice Resolver Service' do
+describe 'Dice Resolver Web Service Behaviour' do
   include Rack::Test::Methods
 
   def app
     ResolverApp
   end
 
-  it "should return BLUE dice for home team and GREEN dice for away team when home and away teams supplied" do
+  it 'should return BLUE dice for home team and GREEN dice for away team when home and away teams supplied' do
     get '/resolve?homeTeam=Wolves&awayTeam=WBA'
     expect(last_response).to be_ok
 
@@ -20,7 +20,7 @@ describe 'Dice Resolver Service' do
     expect(json['awayDice']).to eq 'green'
   end
 
-  it "should return error when home team missing from request" do
+  it 'should return error when home team missing from request' do
     get '/resolve?homeTeam=Wolves'
     expect(last_response).to_not be_ok
 
@@ -28,7 +28,7 @@ describe 'Dice Resolver Service' do
     expect(json['error']).to eq 'Missing away team'
   end
 
-  it "should return error when away team missing from request" do
+  it 'should return error when away team missing from request' do
     get '/resolve?awayTeam=WBA'
     expect(last_response).to_not be_ok
 
