@@ -9,8 +9,8 @@ describe 'Match Dice Behaviour' do
     expect(match_dice.home_dice).to eq 'blue'
   end
 
-  it 'should default to GREEN dice for away team' do
+  it 'should default to RED dice for away team' do
     match_dice = MatchDice.new
-    expect(match_dice.away_dice).to eq 'green'
+    expect(match_dice.away_dice).to eq 'red'
   end
 end

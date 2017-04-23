@@ -15,9 +15,9 @@ The service presently holds a single endpoint called *resolve*, hence:
 
 will return:
 
-    {"homeDice":"blue","awayDice":"green"}
+    {"homeDice":"blue","awayDice":"red"}
 
-Hence for a given match, the _blue_ dice will be used to determine home goals, and _green_ for away.  If a home team and away team name are supplied, it will (for the moment) __always__ return the above JSON with a response code of 200, however in the near future the resolver will have additional logic to allow dice to be selected based upon:
+Hence for a given match, the _blue_ dice will be used to determine home goals, and _red_ for away.  If a home team and away team name are supplied, it will (for the moment) __always__ return the above JSON with a response code of 200, however in the near future the resolver will have additional logic to allow dice to be selected based upon:
 
 - Competition
 - Recent form

@@ -11,13 +11,13 @@ describe 'Dice Resolver Web Service Behaviour' do
     ResolverApp
   end
 
-  it 'should return BLUE dice for home team and GREEN dice for away team when home and away teams supplied' do
+  it 'should return BLUE dice for home team and RED dice for away team when home and away teams supplied' do
     get '/resolve?homeTeam=Wolves&awayTeam=WBA'
     expect(last_response).to be_ok
 
     json = JSON.parse(last_response.body)
     expect(json['homeDice']).to eq 'blue'
-    expect(json['awayDice']).to eq 'green'
+    expect(json['awayDice']).to eq 'red'
   end
 
   it 'should return error when home team missing from request' do
