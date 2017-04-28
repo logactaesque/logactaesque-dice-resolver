@@ -1,11 +1,13 @@
 require 'sinatra'
-require 'JSON'
+require 'json'
 require_relative 'app/services/dice_resolver_service'
 require_relative 'app/models/match_dice'
 
 # Using Sinatra modular style...
 
 class ResolverApp < Sinatra::Base
+
+  set :root, File.dirname(__FILE__)
 
   enable :sessions
 
